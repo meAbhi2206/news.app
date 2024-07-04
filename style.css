@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-text-color);
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  color: var(--secondary-text-color);
+  line-height: 1.4rem;
+}
+
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.286); /* Add a light border at the bottom */
+  z-index: 1030; /* Ensure the navbar is on top of other elements */
+}
+/* Center align the ul */
+/* .navbar .navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+} */
+
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  color: #111010;  /*Default link color with !important to override other styles*/
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.nav-link:hover {
+  color: #198754 !important; /* Color when hovering with !important to override other styles */
+}
+
+.nav-item .nav-link.active {
+  color: #198754 !important;
+}
+
+#custom-button {
+  background-color: #198754;
+  border-color: #198754;
+  color: #ffffff; /* Change text color to white for better contrast */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+#custom-button:hover {
+  background-color: #126941; /* Darker shade on hover */
+  border-color: #126941;
+  color: #ffffff;
+}
+#prev-button{
+  background-color: #198754;
+  border-color: #198754;
+  color: #ffffff; /* Change text color to white for better contrast */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  font-size: 20px;
+}
+#next-button {
+  background-color: #198754;
+  border-color: #198754;
+  color: #ffffff; /* Change text color to white for better contrast */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  font-size: 20px;
+}
+
+#prev-button:hover {
+  background-color: #126941; /* Darker shade on hover */
+  border-color: #126941;
+  color: #ffffff;
+}
+#next-button:hover {
+  background-color: #126941; /* Darker shade on hover */
+  border-color: #126941;
+  color: #ffffff;
+}
+
+/* dark mode */
+/* Dark mode toggle button styles */
+/* Floating dark mode toggle button */
+/* Floating dark mode toggle button */
+/* Ensure body has sufficient padding to prevent content from being covered by fixed-position elements */
+
+
+/* Dark mode toggle button */
+/* Adjustments for dark mode toggle button */
+#dark-mode-button {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes the button circular */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition on hover */
+}
+
+#dark-mode-button:hover {
+  background-color: #0e1110; /* Darker shade on hover */
+  border-color: #0e100f;
+  color: #ffffff; /* Change text color to white for better contrast */
+}
+
+/* Dark mode styles */
+.dark-mode .bg-dark {
+  background-color: #343a40 !important; /* Dark background color */
+  color: #ffffff !important; /* Light text color */
+}
+
