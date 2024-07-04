@@ -10,6 +10,10 @@ async function fetchNews(query, page = 1) {
   try {
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}&pageSize=${pageSize}&page=${page}`);
     const data = await res.json();
+    if (!data.articles || !Array.isArray(data.articles)) {
+      console.error('Invalid data format: articles property is missing or is not an array');
+      return;
+    }
     bindData(data.articles);
     updatePaginationButtons(data.totalResults);
   } catch (error) {
@@ -84,6 +88,7 @@ window.addEventListener("load", () => {
 
 // Handle navigation item click
 function onNavItemClick(id) {
+  currentPage = 1; // Reset to the first page for the new query
   fetchNews(id);
   const navItem = document.getElementById(id);
   if (curSelectedNav) {
@@ -100,6 +105,7 @@ const searchText = document.getElementById("search-text");
 searchButton.addEventListener("click", () => {
   const query = searchText.value;
   if (!query) return;
+  currentPage = 1; // Reset to the first page for the new query
   fetchNews(query);
   curSelectedNav?.classList.remove("active");
   curSelectedNav = null;
@@ -109,16 +115,15 @@ searchButton.addEventListener("click", () => {
 function prevPage() {
   if (currentPage > 1) {
     currentPage--;
-    fetchNews(curSelectedNav.id, currentPage);
+    fetchNews(curSelectedNav ? curSelectedNav.id : searchText.value, currentPage);
   }
 }
 
 // Next page button handler
 function nextPage() {
   currentPage++;
-  fetchNews(curSelectedNav.id, currentPage);
+  fetchNews(curSelectedNav ? curSelectedNav.id : searchText.value, currentPage);
 }
-
 
 // Function to toggle dark mode
 let isDarkMode = false;
