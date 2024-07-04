@@ -1,4 +1,7 @@
 # News App
+## Preview
+### Light Mode | Dark Mode
+<img src="assets/light-mode.png" alt="Light Mode" width="45%"> | <img src="assets/dark-mode.png" alt="Dark Mode" width="45%">
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -12,6 +15,7 @@ News App is a web application built with HTML, CSS, and JavaScript that allows u
 
 ## Features
 - Fetches news from News API
+- Search news on any topics 
 - User-friendly interface
 - Fully responsive design
 - Dark mode support
